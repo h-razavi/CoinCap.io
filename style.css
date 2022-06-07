@@ -5,6 +5,7 @@
 }
 body {
     font-family: 'Lato', sans-serif;
+    font-size: 14px;
     background: rgb(236, 239, 241) none repeat scroll 0% 0% ;
     color:rgba(0,0,0,.87);
     margin: 0;
@@ -103,4 +104,127 @@ a {
     text-align: center;
     font-size: 1.5em;
 }
+table {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 15px -3px;
+    border-spacing: 0;
+    border-radius: 5px;
+    text-align: right;
+    transform: translateY(-100px);
+}
+thead {
+   background: rgb(250, 250, 250) none repeat scroll 0% 0%;
+   margin: 0;
+}
+td {
+    padding: 11px;
+    border-top: 1px solid rgba(34,36,38,.1) ;
+}
+th {
+    padding: 12px 10px;
+    color:rgba(0,0,0,.87);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+tr{
+    cursor: pointer;
+
+}
+.table-center-align{
+    text-align: center;
+}
+.table-left-align{
+    text-align: left;
+}
+.coin-sym{
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.9);
+    opacity: 0.4;
+}
+.td, a:hover{
+    text-decoration: underline;
+}
+.hidden-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.hidden-right{
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+.hidden-left{
+    padding: 14px;
+    text-align: left;
+}
+.hidden-left h3{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.hidden-title{
+    color: grey;
+    padding-right: 16px;
+    font-weight: 700;
+    line-height: 1.2rem;
+}
+.hidden-value{
+    font-weight: 700;
+    line-height: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background: var(--background-gradient);
+    font-size: 1em;
+}
+.footer-container{
+  display: flex;  
+}
+.footer-row{
+    width: 25%;
+}
+.footer-title{
+    color: #fff;
+    font-weight: 700;
+    margin: 14px 0;
+}
+.footer-text{
+    color: #A8C0EA;
+}
+.footer-text:hover{
+    color: #fff;
+}
+.footer-row> p{
+    color: #A8C0EA;
+}
+.footer-row>svg{
+    fill: #A8C0EA;
+    margin-right: 8px; 
+}
+.footer-row>svg:hover{
+    fill: #fff;
+}
+.appstore-link{
+    opacity: 0.5;
+}
+.appstore-link:hover{
+    opacity: 1;
+}
+
 
