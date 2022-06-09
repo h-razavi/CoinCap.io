@@ -153,8 +153,8 @@ tr{
 }
 .hidden-right{
     display: flex;
-    justify-content: space-around;
-    text-align: left;
+    justify-content: space-between;
+    text-align: left;   
 }
 .hidden-left{
     padding: 14px;
@@ -173,6 +173,9 @@ tr{
 .hidden-value{
     font-weight: 700;
     line-height: 1.2rem;
+}
+.hidden-right-col {
+    margin-right: 100px;
 }
 
 
