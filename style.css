@@ -12,7 +12,6 @@ body {
     padding: 0;
     line-height: 1.4em;
     --background-gradient: rgb(255, 255, 255) linear-gradient(to right, rgb(63, 81, 181), rgb(100, 181, 246)) repeat scroll 0% 0%;
-    height: 5000px;
 }
 .container {
     width: 100%;
@@ -90,6 +89,7 @@ a {
 .markets-info{
     display: flex;
     justify-content: space-between;
+    padding: 0 20px;
 }
 .markets-item {
     display: flex;

@@ -9,6 +9,8 @@ function getTableData(){
         return data;
     })
 }
+//Num abbreviation
+
 
 
 //DOM manipulation
@@ -33,22 +35,22 @@ function renderTable(rank,name,symbol,price,cap,vwap,supply,volume,change){
     nameCell.appendChild(addLink);
 
     let priceCell = document.createElement('td');
-    priceCell.textContent = price;
+    priceCell.textContent = '$'+Math.round(price*100)/100;
 
     let capCell = document.createElement('td');
-    capCell.textContent = cap;
+    capCell.textContent = '$'+Math.round(cap*100)/100;
 
     let vwapCell = document.createElement('td');
-    vwapCell.textContent = vwap;
+    vwapCell.textContent = '$'+Math.round(vwap*100)/100;
 
     let supplyCell = document.createElement('td');
-    supplyCell.textContent = supply;
+    supplyCell.textContent = Math.round(supply*100)/100;
 
     let volumeCell = document.createElement('td');
-    volumeCell.textContent = volume;
+    volumeCell.textContent = '$'+Math.round(volume*100)/100;
 
     let changeCell = document.createElement('td');
-    changeCell.textContent = change;
+    changeCell.textContent = '%'+Math.round(change*100)/100;
 
     tableRow.appendChild(rankCell);
     tableRow.appendChild(nameCell);
@@ -73,7 +75,6 @@ function importTable(table){
 getTableData().then(function(){
     importTable(data);
 })
-
 
 
 
