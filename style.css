@@ -126,7 +126,7 @@ a {
    font-weight: 300;
 }
 .table-header-item{
-    width: 10%;
+    min-width: 10%;
     padding: 12px 10px;
     color:rgba(0,0,0,.87);
     font-size: 0.9rem;
@@ -134,7 +134,7 @@ a {
 }   
 .table-header-item:hover{
     color: #000;
-    font-weight: 400;
+    font-weight: bolder;
 }
 .table-row{
     display: flex;
@@ -162,6 +162,9 @@ a {
     font-size: 0.8rem;
     color: rgba(0, 0, 0, 0.9);
     opacity: 0.4;
+}
+.status {
+    color: rgb(24, 198, 131);
 }
 
 

@@ -86,6 +86,3 @@ getTableData().then(function(){
 
 
 
-
-
-
