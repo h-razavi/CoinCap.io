@@ -1,3 +1,4 @@
+
 //fetch data
 let data = [];
 function getTableData(){
@@ -9,22 +10,21 @@ function getTableData(){
         return data;
     })
 }
-//Num abbreviation
-
-
 
 //DOM manipulation
-let dataContainer = document.querySelector('tbody');
+let dataContainer = document.querySelector('.table');
 function renderTable(rank,name,symbol,price,cap,vwap,supply,volume,change){
-    let tableRow = document.createElement('tr');
+    let tableRow = document.createElement('div');
+    tableRow.classList.add('table-row');
 
-    let rankCell = document.createElement('td');
+    let rankCell = document.createElement('div');
     rankCell.classList.add('table-center-align');
+    rankCell.classList.add('table-item');
     rankCell.textContent = rank;
 
-    let nameCell = document.createElement('td');
+    let nameCell = document.createElement('div');
     nameCell.classList.add('table-left-align');
-    nameCell.setAttribute('colspan','2');
+    nameCell.classList.add('table-item');
     let addLink = document.createElement('a');
     addLink.setAttribute('href','#');
     addLink.textContent= name;
@@ -34,23 +34,29 @@ function renderTable(rank,name,symbol,price,cap,vwap,supply,volume,change){
     addLink.appendChild(short);
     nameCell.appendChild(addLink);
 
-    let priceCell = document.createElement('td');
+    let priceCell = document.createElement('div');
+    priceCell.classList.add('table-item');
     priceCell.textContent = '$'+Math.round(price*100)/100;
 
-    let capCell = document.createElement('td');
-    capCell.textContent = '$'+Math.round(cap*100)/100;
+    let capCell = document.createElement('div');
+    capCell.classList.add('table-item');
+    capCell.textContent = numeral(cap).format('$0,0.00a');
 
-    let vwapCell = document.createElement('td');
-    vwapCell.textContent = '$'+Math.round(vwap*100)/100;
+    let vwapCell = document.createElement('div');
+    vwapCell.classList.add('table-item');
+    vwapCell.textContent = numeral(vwap).format('$0,0.00a');
 
-    let supplyCell = document.createElement('td');
-    supplyCell.textContent = Math.round(supply*100)/100;
+    let supplyCell = document.createElement('div');
+    supplyCell.classList.add('table-item');
+    supplyCell.textContent = numeral(supply).format('0,0.00a');
 
-    let volumeCell = document.createElement('td');
-    volumeCell.textContent = '$'+Math.round(volume*100)/100;
+    let volumeCell = document.createElement('div');
+    volumeCell.classList.add('table-item');
+    volumeCell.textContent = numeral(volume).format('$0,0.00a');
 
-    let changeCell = document.createElement('td');
-    changeCell.textContent = '%'+Math.round(change*100)/100;
+    let changeCell = document.createElement('div');
+    changeCell.classList.add('table-item');
+    changeCell.textContent = Math.round(change*100)/100 + '%';
 
     tableRow.appendChild(rankCell);
     tableRow.appendChild(nameCell);

@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap"
       rel="stylesheet"
     />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
   </head>
   <body>
     <div class="nav-container">
@@ -69,24 +70,32 @@
       </div>
     </section>
     <main>
-      <table class="container">
-        <thead>
-          <tr>
-            <th class="table-center-align">Rank</th>
-            <th colspan="2" class="table-left-align">Name</th>
-            <th>Price</th>
-            <th>Market Cap</th>
-            <th>VWAP (24Hr)</th>
-            <th>Supply</th>
-            <th>Volume (24Hr)</th>
-            <th>Change (24Hr)</th>
-          </tr>
-        </thead>
-        <tbody>
+
+      <div class="container table">
+        <div class="table-header">
+          <div class="table-header-item table-center-align">Rank</div>
+          <div class="table-header-item table-left-align">Name</div>
+          <div class="table-header-item">Price</div>
+          <div class="table-header-item">Market Cap</div>
+          <div class="table-header-item">VWAP (24Hr)</div>
+          <div class="table-header-item">Supply</div>
+          <div class="table-header-item">Volume (24Hr)</div>
+          <div class="table-header-item">Change (24Hr)</div>
+        </div>
+        <div class="table-row">
+          <div class="table-item table-center-align">1</div>
+          <div class="table-item table-left-align name-col"><a>Bitcoin<p class="coin-sym">BTC</p></a></div>
+          <div class="table-item">$29,356.77</div>
+          <div class="table-item">$559.62b</div>
+          <div class="table-item">$29,408.22</div>
+          <div class="table-item">19.06m</div>
+          <div class="table-item">$11.96b</div>
+          <div class="table-item">-2.41%</div>
+          </div>
+          
 
 
-        </tbody>
-      </table>
+      </div>
     </main>
 
 
