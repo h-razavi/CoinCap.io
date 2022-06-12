@@ -229,6 +229,7 @@ select{
 }
 .blur{
     filter: blur(5px);
+    transition: all .5s ease-in-out;
 }
 
 
