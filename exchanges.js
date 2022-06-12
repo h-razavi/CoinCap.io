@@ -72,7 +72,34 @@ getTableData().then(function(){
     importTable(data);
 })
 
+//Settings modal
+let settings = document.querySelector('.settings');
+settings.addEventListener('click',function(){
+    let settingsModal = document.querySelector('.settings-modal');
+    settingsModal.classList.remove('hide');
+    settingsModal.classList.add('show');
+    let container = document.querySelectorAll('.container');
+    container.forEach(function(item){
+        item.classList.add('blur');
+    })
+    let body = document.querySelector('body');
+    body.style.position = 'fixed';
+    body.style.width = '100%';
+})
 
+let closeSettings = document.querySelector('.close-button');
+closeSettings.addEventListener('click',function(){
+    let settingsModal = document.querySelector('.settings-modal');
+    settingsModal.classList.remove('show');
+    settingsModal.classList.add('hide');
+    let container = document.querySelectorAll('.container');
+    container.forEach(function(item){
+        item.classList.remove('blur');
+    })
+    let body = document.querySelector('body');
+    body.style.position = '';
+    body.style.width = '';
+})
 
 
 
