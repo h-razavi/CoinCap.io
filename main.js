@@ -19,7 +19,7 @@ function renderTable(rank,name,symbol,price,cap,vwap,supply,volume,change){
 
     let rankCell = document.createElement('div');
     rankCell.classList.add('table-center-align');
-    rankCell.classList.add('table-item');
+    rankCell.classList.add('rank-col');
     rankCell.textContent = rank;
 
     let nameCell = document.createElement('div');
@@ -33,7 +33,20 @@ function renderTable(rank,name,symbol,price,cap,vwap,supply,volume,change){
     short.classList.add('coin-sym');
     short.textContent= symbol;
     addLink.appendChild(short);
-    nameCell.appendChild(addLink);
+    let nameText = document.createElement('div');
+    nameText.appendChild(addLink);
+    let coinLogo = document.createElement('img');
+    let shortLink= symbol.toLowerCase();
+    coinLogo.setAttribute('src',`https://assets.coincap.io/assets/icons/${shortLink}@2x.png`);
+    coinLogo.setAttribute('width','30px');
+    coinLogo.setAttribute('height','30px');
+    coinLogo.style.marginRight='10px';
+    nameCell.appendChild(coinLogo);
+    nameCell.appendChild(nameText);
+
+
+
+
 
     let priceCell = document.createElement('div');
     priceCell.classList.add('table-item');
@@ -81,6 +94,7 @@ function importTable(table){
 
 getTableData().then(function(){
     importTable(data);
+    //Sorting
 })
 
 //Settings modal
@@ -112,4 +126,6 @@ closeSettings.addEventListener('click',function(){
     body.style.width = '';
 })
 
+console.log(data);
+//Sorting
 

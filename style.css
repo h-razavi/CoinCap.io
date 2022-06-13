@@ -161,8 +161,13 @@ a {
     color: #000;
     font-weight: bolder;
 }
+.rank-col{
+    width: 7%;
+}
 .name-col{
-    min-width: 17%;
+    min-width: 20%;
+    display: flex;
+    align-items: center;
 }
 .table-row{
     display: flex;
