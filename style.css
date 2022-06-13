@@ -87,6 +87,24 @@ a {
   .button:hover{
     transform: translateY(-2px);
   }
+.search-bar input{
+    width: 30px;
+    height: 30px;
+    border:none;
+    border-radius: 5px;
+    background-image: url("./icons/magnifying-glass-solid.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+}
+.search-bar input:focus{
+    outline: 1px solid #000;
+    width: 200px;
+}
+
+
 .stat-section{
     background: var(--background-gradient);
     color: #fff;
@@ -132,21 +150,28 @@ a {
    font-weight: 300;
 }
 .table-header-item{
-    min-width: 10%;
+    width: 10%;
     padding: 12px 10px;
     color:rgba(0,0,0,.87);
     font-size: 0.9rem;
     font-weight: 300;
+    white-space: nowrap;
 }   
 .table-header-item:hover{
     color: #000;
     font-weight: bolder;
+}
+.name-col{
+    min-width: 17%;
 }
 .table-row{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid rgba(34,36,38,.1) ;
+}
+.table-row:hover{
+    background-color: #f7f7f7;
 }
 .table-item{
     width: 10%;
@@ -228,7 +253,7 @@ select{
     cursor: pointer;
 }
 .blur{
-    filter: blur(5px);
+    filter: blur(5px) saturate(30%);
     transition: all .5s ease-in-out;
 }
 

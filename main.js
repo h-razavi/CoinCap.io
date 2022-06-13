@@ -25,6 +25,7 @@ function renderTable(rank,name,symbol,price,cap,vwap,supply,volume,change){
     let nameCell = document.createElement('div');
     nameCell.classList.add('table-left-align');
     nameCell.classList.add('table-item');
+    nameCell.classList.add('name-col');
     let addLink = document.createElement('a');
     addLink.setAttribute('href','#');
     addLink.textContent= name;
@@ -36,7 +37,7 @@ function renderTable(rank,name,symbol,price,cap,vwap,supply,volume,change){
 
     let priceCell = document.createElement('div');
     priceCell.classList.add('table-item');
-    priceCell.textContent = '$'+Math.round(price*100)/100;
+    priceCell.textContent = numeral(price).format('$0,0.00');
 
     let capCell = document.createElement('div');
     capCell.classList.add('table-item');
@@ -110,8 +111,5 @@ closeSettings.addEventListener('click',function(){
     body.style.position = '';
     body.style.width = '';
 })
-
-
-
 
 
