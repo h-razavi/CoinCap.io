@@ -261,6 +261,65 @@ select{
     filter: blur(5px) saturate(30%);
     transition: all .5s ease-in-out;
 }
+.coin-info-left{
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-around;
+    width: 40%;
+}
+.rank-info{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.rank-info img{
+    position: absolute;
+    top: 5px;
+    
+
+}
+.rank-info h2{
+    font-size: 1.75rem;
+    font-weight: 700;
+    z-index: 1;
+}
+.rank-info p{
+    font-size: 0.7rem;
+    font-weight: 300;
+    margin: 0;
+    z-index: 1;
+}
+.coin-header{
+    font-size: 1.75rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 120px;
+}
+.coin-header span{
+    display: inline-block;
+    margin: 20px 0;
+}
+.price-percent{
+    font-size: 1.2rem;
+    padding-left: 20px;
+    color: rgb(239, 154, 154);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,131 +1,187 @@
-
 //fetch data
 let data = [];
-function getTableData(){
-    return fetch("https://api.coincap.io/v2/assets")
-    .then(function(res){
-        return res.json();
-    }).then(function(assets){
-        data=assets.data
-        return data;
+function getTableData() {
+  return fetch("https://api.coincap.io/v2/assets")
+    .then(function (res) {
+      return res.json();
     })
+    .then(function (assets) {
+      data = assets.data;
+      return data;
+    });
 }
 
 //DOM manipulation
-let dataContainer = document.querySelector('.table');
-function renderTable(rank,name,symbol,price,cap,vwap,supply,volume,change){
-    let tableRow = document.createElement('div');
-    tableRow.classList.add('table-row');
+let dataContainer = document.querySelector(".table");
+function renderTable(
+  rank,
+  name,
+  symbol,
+  price,
+  cap,
+  vwap,
+  supply,
+  volume,
+  change
+) {
+  let tableRow = document.createElement("div");
+  tableRow.classList.add("table-row");
 
-    let rankCell = document.createElement('div');
-    rankCell.classList.add('table-center-align');
-    rankCell.classList.add('rank-col');
-    rankCell.textContent = rank;
+  let rankCell = document.createElement("div");
+  rankCell.classList.add("table-center-align");
+  rankCell.classList.add("rank-col");
+  rankCell.textContent = rank;
 
-    let nameCell = document.createElement('div');
-    nameCell.classList.add('table-left-align');
-    nameCell.classList.add('table-item');
-    nameCell.classList.add('name-col');
-    let addLink = document.createElement('a');
-    addLink.setAttribute('href','#');
-    addLink.textContent= name;
-    let short = document.createElement('p');
-    short.classList.add('coin-sym');
-    short.textContent= symbol;
-    addLink.appendChild(short);
-    let nameText = document.createElement('div');
-    nameText.appendChild(addLink);
-    let coinLogo = document.createElement('img');
-    let shortLink= symbol.toLowerCase();
-    coinLogo.setAttribute('src',`https://assets.coincap.io/assets/icons/${shortLink}@2x.png`);
-    coinLogo.setAttribute('width','30px');
-    coinLogo.setAttribute('height','30px');
-    coinLogo.style.marginRight='10px';
-    nameCell.appendChild(coinLogo);
-    nameCell.appendChild(nameText);
+  let nameCell = document.createElement("div");
+  nameCell.classList.add("table-left-align");
+  nameCell.classList.add("table-item");
+  nameCell.classList.add("name-col");
+  let addLink = document.createElement("a");
+  addLink.setAttribute("href", "#");
+  addLink.textContent = name;
+  let short = document.createElement("p");
+  short.classList.add("coin-sym");
+  short.textContent = symbol;
+  addLink.appendChild(short);
+  let nameText = document.createElement("div");
+  nameText.appendChild(addLink);
+  let coinLogo = document.createElement("img");
+  let shortLink = symbol.toLowerCase();
+  coinLogo.setAttribute(
+    "src",
+    `https://assets.coincap.io/assets/icons/${shortLink}@2x.png`
+  );
+  coinLogo.setAttribute("width", "30px");
+  coinLogo.setAttribute("height", "30px");
+  coinLogo.style.marginRight = "10px";
+  nameCell.appendChild(coinLogo);
+  nameCell.appendChild(nameText);
 
+  let priceCell = document.createElement("div");
+  priceCell.classList.add("table-item");
+  priceCell.textContent = numeral(price).format("$0,0.00");
 
+  let capCell = document.createElement("div");
+  capCell.classList.add("table-item");
+  capCell.textContent = numeral(cap).format("$0,0.00a");
 
+  let vwapCell = document.createElement("div");
+  vwapCell.classList.add("table-item");
+  vwapCell.textContent = numeral(vwap).format("$0,0.00a");
 
+  let supplyCell = document.createElement("div");
+  supplyCell.classList.add("table-item");
+  supplyCell.textContent = numeral(supply).format("0,0.00a");
 
-    let priceCell = document.createElement('div');
-    priceCell.classList.add('table-item');
-    priceCell.textContent = numeral(price).format('$0,0.00');
+  let volumeCell = document.createElement("div");
+  volumeCell.classList.add("table-item");
+  volumeCell.textContent = numeral(volume).format("$0,0.00a");
 
-    let capCell = document.createElement('div');
-    capCell.classList.add('table-item');
-    capCell.textContent = numeral(cap).format('$0,0.00a');
+  let changeCell = document.createElement("div");
+  changeCell.classList.add("table-item");
+  changeCell.textContent = Math.round(change * 100) / 100 + "%";
 
-    let vwapCell = document.createElement('div');
-    vwapCell.classList.add('table-item');
-    vwapCell.textContent = numeral(vwap).format('$0,0.00a');
+  tableRow.appendChild(rankCell);
+  tableRow.appendChild(nameCell);
+  tableRow.appendChild(priceCell);
+  tableRow.appendChild(capCell);
+  tableRow.appendChild(vwapCell);
+  tableRow.appendChild(supplyCell);
+  tableRow.appendChild(volumeCell);
+  tableRow.appendChild(changeCell);
 
-    let supplyCell = document.createElement('div');
-    supplyCell.classList.add('table-item');
-    supplyCell.textContent = numeral(supply).format('0,0.00a');
-
-    let volumeCell = document.createElement('div');
-    volumeCell.classList.add('table-item');
-    volumeCell.textContent = numeral(volume).format('$0,0.00a');
-
-    let changeCell = document.createElement('div');
-    changeCell.classList.add('table-item');
-    changeCell.textContent = Math.round(change*100)/100 + '%';
-
-    tableRow.appendChild(rankCell);
-    tableRow.appendChild(nameCell);
-    tableRow.appendChild(priceCell);
-    tableRow.appendChild(capCell);
-    tableRow.appendChild(vwapCell);
-    tableRow.appendChild(supplyCell);
-    tableRow.appendChild(volumeCell);
-    tableRow.appendChild(changeCell);
-
-
-    dataContainer.appendChild(tableRow);
+  dataContainer.appendChild(tableRow);
+}
+function sortTable(element) {
+  if (typeof data.element === "string") {
+    data.sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    });
+  } else {
+    data.sort(function (a, b) {
+      return a.element - b.element;
+    });
+  }
 }
 
-
-function importTable(table){
-    table.forEach(function (item){
-        renderTable(item.rank,item.name,item.symbol,item.priceUsd,item.marketCapUsd,item.vwap24Hr,item.supply,item.volumeUsd24Hr,item.changePercent24Hr);
+function sortByClick(){
+    let sortBy=document.querySelectorAll('.table-header-item');
+    sortBy.forEach(function(item){
+        item.addEventListener('click',function(evt){
+            let sortItem = evt.target.textContent;
+            return sortItem;
+        })
+        sortTable(sortItem);
     })
 }
 
-getTableData().then(function(){
+/*function sortTable(){
+    let sortBy=document.querySelectorAll('.table-header-item');
+    sortBy.forEach(function(item){
+        item.addEventListener('click',function(evt){
+            let sortItem = evt.target.textContent;
+            data.sort(function(a,b){
+                if(sortItem==='Name'){
+                    return a.name.localeCompare(b.name);
+                }
+            })
+        })
+    })
+}*/
+
+function importTable(table) {
+  table.forEach(function (item) {
+    renderTable(
+      item.rank,
+      item.name,
+      item.symbol,
+      item.priceUsd,
+      item.marketCapUsd,
+      item.vwap24Hr,
+      item.supply,
+      item.volumeUsd24Hr,
+      item.changePercent24Hr
+    );
+  });
+}
+
+getTableData()
+  .then(() => {
+    sortByClick();
+    console.log(data);
+  })
+  .then(function () {
     importTable(data);
-    //Sorting
-})
+    return data;
+  });
 
 //Settings modal
-let settings = document.querySelector('.settings');
-settings.addEventListener('click',function(){
-    let settingsModal = document.querySelector('.settings-modal');
-    settingsModal.classList.remove('hide');
-    settingsModal.classList.add('show');
-    let container = document.querySelectorAll('.container');
-    container.forEach(function(item){
-        item.classList.add('blur');
-    })
-    let body = document.querySelector('body');
-    body.style.position = 'fixed';
-    body.style.width = '100%';
-})
+let settings = document.querySelector(".settings");
+settings.addEventListener("click", function () {
+  let settingsModal = document.querySelector(".settings-modal");
+  settingsModal.classList.remove("hide");
+  settingsModal.classList.add("show");
+  let container = document.querySelectorAll(".container");
+  container.forEach(function (item) {
+    item.classList.add("blur");
+  });
+  let body = document.querySelector("body");
+  body.style.position = "fixed";
+  body.style.width = "100%";
+});
 
-let closeSettings = document.querySelector('.close-button');
-closeSettings.addEventListener('click',function(){
-    let settingsModal = document.querySelector('.settings-modal');
-    settingsModal.classList.remove('show');
-    settingsModal.classList.add('hide');
-    let container = document.querySelectorAll('.container');
-    container.forEach(function(item){
-        item.classList.remove('blur');
-    })
-    let body = document.querySelector('body');
-    body.style.position = '';
-    body.style.width = '';
-})
+let closeSettings = document.querySelector(".close-button");
+closeSettings.addEventListener("click", function () {
+  let settingsModal = document.querySelector(".settings-modal");
+  settingsModal.classList.remove("show");
+  settingsModal.classList.add("hide");
+  let container = document.querySelectorAll(".container");
+  container.forEach(function (item) {
+    item.classList.remove("blur");
+  });
+  let body = document.querySelector("body");
+  body.style.position = "";
+  body.style.width = "";
+});
 
-console.log(data);
 //Sorting
-

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin (BTC) | CoinCap.io</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+  </head>
+  <body>
+    <div class="nav-container">
+      <div class="navbar container menu">
+        <div class="navbar-left menu">
+          <div class="menu-item menu"><a href="./index.html">Coins</a></div>
+          <div class="menu-item menu">
+            <a href="./exchanges.html">Exchanges</a>
+          </div>
+          <div class="menu-item menu"><a href="#">Swap</a></div>
+        </div>
+
+        <div class="nav-img menu-item">
+          <img src="/logos/black.svg" height="36px" width="80px" />
+        </div>
+        <div class="navbar-right">
+          <div class="search-bar right-items">
+            <input type="text" />
+          </div>
+          <div class="settings right-items">
+            <img src="/icons/gear-solid.svg" height="16px" />
+          </div>
+          <div class="wallet-button right-items">
+            <button class="button">Connect Wallet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-modal hide">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div class="modal-header-title">Settings</div>
+          <svg
+            class="close-button"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            role="img"
+            id="footer-sample-full"
+            width="16"
+            height="16"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 1216 1312"
+            class="iconify iconify--fa"
+          >
+            <path
+              fill="currentColor"
+              d="M1202 1066q0 40-28 68l-136 136q-28 28-68 28t-68-28L608 976l-294 294q-28 28-68 28t-68-28L42 1134q-28-28-28-68t28-68l294-294L42 410q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294l294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68L880 704l294 294q28 28 28 68z"
+            ></path>
+          </svg>
+        </div>
+        <div class="modal-content">
+          <div class="modal-content-row">
+            <span>Dark Theme</span><input type="checkbox" />
+          </div>
+          <div class="modal-content-row">
+            <span>Flash Price Indicators</span><input type="checkbox" />
+          </div>
+          <div class="modal-content-row">
+            <select name="currencies">
+              <option value="usd">USD</option>
+              <option value="eur">EUR</option>
+            </select>
+          </div>
+          <div class="modal-content-row">
+            <select name="langs">
+              <option value="eng">English</option>
+              <option value="rus">Russian</option>
+              <option value="chi">Chinese</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="stat-section">
+        <div class="container">
+            <div class="coin-info-left">
+                <div class="rank-info">
+                    <img src="./icons/bookmark-fill(1).svg" height="120px" />
+                    <h2>1</h2>
+                    <p>RANK</p>
+                </div>
+                <div class="coin-header">
+                    <div class="coin-title">Bitcoin (BTC)</div>
+                    <div class="coin-price">
+                      <span>$22,589.81</span><span class="price-percent">-7.45%</span>
+                    </div>
+                  </div>
+            </div>
+            <div class="coin-info-right">
+                <div class="coin-info-right-col"></div>
+                <div class="coin-info-right-col"></div>
+                <div class="coin-info-right-col"></div>
+            </div>
+        </div>
+    </section>
+
+    <main></main>
+
+    <footer>
+      <div class="footer-container container">
+        <div class="footer-row">
+          <div class="footer-title">COINCAP.IO</div>
+          <div class="footer-text">Methodology</div>
+          <div class="footer-text">Support</div>
+          <div class="footer-text">Our API</div>
+          <div class="footer-text">Rate Comparison</div>
+          <div class="footer-text">Careers</div>
+        </div>
+        <div class="footer-row">
+          <div class="footer-title">LEGALS</div>
+          <div class="footer-text">Terms of Service</div>
+          <div class="footer-text">Privacy Policy</div>
+          <div class="footer-title">DISCLAIMER</div>
+          <p>
+            Neither ShapeShift AG nor CoinCap are in any way associated with
+            CoinMarketCap, LLC or any of its goods and services.
+          </p>
+        </div>
+        <div class="footer-row">
+          <div class="footer-title">FOLLOW US</div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="social-icon"
+          >
+            <path
+              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
+            />
+          </svg>
+        </div>
+        <div class="footer-row">
+          <div class="footer-title">COINCAP APP AVAILABLE ON</div>
+          <div class="appstore-link"><img src="./imgs/google_play.svg" /></div>
+          <div class="appstore-link"><img src="./imgs/apple_store.svg" /></div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>
