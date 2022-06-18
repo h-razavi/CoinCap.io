@@ -92,42 +92,6 @@ function renderTable(
 
   dataContainer.appendChild(tableRow);
 }
-function sortTable(element) {
-  if (typeof data.element === "string") {
-    data.sort(function (a, b) {
-      return a.name.localeCompare(b.name);
-    });
-  } else {
-    data.sort(function (a, b) {
-      return a.element - b.element;
-    });
-  }
-}
-
-function sortByClick(){
-    let sortBy=document.querySelectorAll('.table-header-item');
-    sortBy.forEach(function(item){
-        item.addEventListener('click',function(evt){
-            let sortItem = evt.target.textContent;
-            return sortItem;
-        })
-        sortTable(sortItem);
-    })
-}
-
-/*function sortTable(){
-    let sortBy=document.querySelectorAll('.table-header-item');
-    sortBy.forEach(function(item){
-        item.addEventListener('click',function(evt){
-            let sortItem = evt.target.textContent;
-            data.sort(function(a,b){
-                if(sortItem==='Name'){
-                    return a.name.localeCompare(b.name);
-                }
-            })
-        })
-    })
-}*/
 
 function importTable(table) {
   table.forEach(function (item) {
@@ -144,15 +108,112 @@ function importTable(table) {
     );
   });
 }
+//Sort function
+function sortData(factor) {
+  data.sort(function (a, b) {
+    if (a.factor > b.factor) {
+      return 1;
+  }else {
+      return -1;
+  }
+})
+  importTable(data);
+}
+
+//Get Table and Sort
 
 getTableData()
-  .then(() => {
-    sortByClick();
-    console.log(data);
-  })
   .then(function () {
     importTable(data);
     return data;
+  })
+  .then(() => {
+    let sortBy = document.querySelectorAll(".table-header-item");
+    sortBy.forEach(function (item) {
+      item.addEventListener("click", function (evt) {
+        let rows = document.querySelectorAll(".table-row");
+        rows.forEach((row) => {
+          row.remove();
+        });
+        let sortItem = evt.target.textContent;
+        if (sortItem === "Rank") {
+          data.sort(function (a,b){
+            if(Number(a.rank)>Number(b.rank)){
+              return 1;
+            } else{
+              return -1;
+            }
+          })
+          importTable(data);
+        }
+        if (sortItem === "Name") {
+          data.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+          })
+          importTable(data);
+        }
+        if (sortItem === "Price") {
+          data.sort(function (a,b){
+            if(Number(a.priceUsd)>Number(b.priceUsd)){
+              return 1;
+            } else{
+              return -1;
+            }
+          })
+          importTable(data);
+        }
+        if (sortItem === "Market Cap") {
+          data.sort(function (a,b){
+            if(Number(a.marketCapUsd)>Number(b.marketCapUsd)){
+              return 1;
+            } else{
+              return -1;
+            }
+          })
+          importTable(data);
+        }
+        if (sortItem === "VWAP (24Hr)") {
+          data.sort(function (a,b){
+            if(Number(a.vwap24Hr)>Number(b.vwap24Hr)){
+              return 1;
+            } else{
+              return -1;
+            }
+          })
+          importTable(data);
+        }
+        if (sortItem === "Supply") {
+          data.sort(function (a,b){
+            if(Number(a.supply)>Number(b.supply)){
+              return 1;
+            } else{
+              return -1;
+            }
+          })
+          importTable(data);
+        }
+        if (sortItem === "Volume (24Hr)") {
+          data.sort(function (a,b){
+            if(Number(a.volumeUsd24Hr)>Number(b.volumeUsd24Hr)){
+              return 1;
+            } else{
+              return -1;
+            }
+          })
+          importTable(data);
+        }
+        if (sortItem === "Change (24Hr)") {
+          data.sort(function (a,b){
+            if(Number(a.changePercent24Hr)>Number(b.changePercent24Hr)){
+              return 1;
+            } else{
+              return -1;
+            }
+          })
+          importTable(data);
+        }
+      });
+    });
   });
 
 //Settings modal
@@ -183,5 +244,3 @@ closeSettings.addEventListener("click", function () {
   body.style.position = "";
   body.style.width = "";
 });
-
-//Sorting

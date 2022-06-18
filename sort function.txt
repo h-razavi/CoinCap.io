@@ -1,0 +1,43 @@
+                data.sort(function(a,b){
+                    if(sortItem==='Rank' && a.rank>b.rank){
+                        return 1;
+                    }
+                    return 1;
+                })
+                data.sort(function(a,b){
+                    if(sortItem==='Name' && a.name>b.name){
+                        return 1;
+                    }
+                })
+            if (sortItem==='Price'){
+                data.sort(function(a,b){
+                    if(a.priceUsd>b.priceUsd){
+                        return 1;
+                    }
+                })
+            }
+            if (sortItem==='Market Cap'){
+                data.sort(function(a,b){
+                    return a.marketCapUsd-b.marketCapUsd;
+                })
+            }
+            if (sortItem==='VWAP (24Hr)'){
+                data.sort(function(a,b){
+                    return a.vwap24Hr-b.vwap24Hr;
+                })
+            }
+            if (sortItem==='Supply'){
+                data.sort(function(a,b){
+                    return a.supply-b.supply;
+                })
+            }
+            if (sortItem==='Volume (24Hr)'){
+                data.sort(function(a,b){
+                    return a.volumeUsd24Hr-b.volumeUsd24Hr;
+                })
+            }
+            if (sortItem==='Change (24Hr)'){
+                data.sort(function(a,b){
+                    return a.changePercent24Hr-b.changePercent24Hr;
+                })
+            }
