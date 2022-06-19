@@ -137,80 +137,88 @@ getTableData()
         });
         let sortItem = evt.target.textContent;
         if (sortItem === "Rank") {
-          data.sort(function (a,b){
-            if(Number(a.rank)>Number(b.rank)){
-              return 1;
-            } else{
-              return -1;
-            }
-          })
-          importTable(data);
+          // data.sort(function (a,b){
+          //   if(Number(a.rank)>Number(b.rank)){
+          //     return 1;
+          //   } else{
+          //     return -1;
+          //   }
+          // })
+          // importTable(data);
+          sortData(rank);
         }
         if (sortItem === "Name") {
-          data.sort(function (a, b) {
-            return a.name.localeCompare(b.name);
-          })
-          importTable(data);
+          // data.sort(function (a, b) {
+          //   return a.name.localeCompare(b.name);
+          // })
+          // importTable(data);
+          sortData(name);
         }
         if (sortItem === "Price") {
-          data.sort(function (a,b){
-            if(Number(a.priceUsd)>Number(b.priceUsd)){
-              return 1;
-            } else{
-              return -1;
-            }
-          })
-          importTable(data);
+          // data.sort(function (a,b){
+          //   if(Number(a.priceUsd)>Number(b.priceUsd)){
+          //     return 1;
+          //   } else{
+          //     return -1;
+          //   }
+          // })
+          // importTable(data);
+          sortData(priceUsd);
         }
         if (sortItem === "Market Cap") {
-          data.sort(function (a,b){
-            if(Number(a.marketCapUsd)>Number(b.marketCapUsd)){
-              return 1;
-            } else{
-              return -1;
-            }
-          })
-          importTable(data);
+          // data.sort(function (a,b){
+          //   if(Number(a.marketCapUsd)>Number(b.marketCapUsd)){
+          //     return 1;
+          //   } else{
+          //     return -1;
+          //   }
+          // })
+          // importTable(data);
+          sortData(marketCapUsd);
         }
         if (sortItem === "VWAP (24Hr)") {
-          data.sort(function (a,b){
-            if(Number(a.vwap24Hr)>Number(b.vwap24Hr)){
-              return 1;
-            } else{
-              return -1;
-            }
-          })
-          importTable(data);
+          // data.sort(function (a,b){
+          //   if(Number(a.vwap24Hr)>Number(b.vwap24Hr)){
+          //     return 1;
+          //   } else{
+          //     return -1;
+          //   }
+          // })
+          // importTable(data);
+          sortData(vwap24Hr);
         }
         if (sortItem === "Supply") {
-          data.sort(function (a,b){
-            if(Number(a.supply)>Number(b.supply)){
-              return 1;
-            } else{
-              return -1;
-            }
-          })
-          importTable(data);
+          // data.sort(function (a,b){
+          //   if(Number(a.supply)>Number(b.supply)){
+          //     return 1;
+          //   } else{
+          //     return -1;
+          //   }
+          // })
+          // importTable(data);
+          sortData(supply);
         }
         if (sortItem === "Volume (24Hr)") {
-          data.sort(function (a,b){
-            if(Number(a.volumeUsd24Hr)>Number(b.volumeUsd24Hr)){
-              return 1;
-            } else{
-              return -1;
-            }
-          })
-          importTable(data);
+          // data.sort(function (a,b){
+          //   if(Number(a.volumeUsd24Hr)>Number(b.volumeUsd24Hr)){
+          //     return 1;
+          //   } else{
+          //     return -1;
+          //   }
+          // })
+          // importTable(data);
+          sortData(volumeUsd24Hr);
         }
         if (sortItem === "Change (24Hr)") {
-          data.sort(function (a,b){
-            if(Number(a.changePercent24Hr)>Number(b.changePercent24Hr)){
-              return 1;
-            } else{
-              return -1;
-            }
-          })
-          importTable(data);
+          // data.sort(function (a,b){
+          //   if(Number(a.changePercent24Hr)>Number(b.changePercent24Hr)){
+          //     return 1;
+          //   } else{
+          //     return -1;
+          //   }
+          // })
+          // importTable(data);
+          sortData(changePercent24Hr);
         }
       });
     });
