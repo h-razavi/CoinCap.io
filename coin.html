@@ -14,6 +14,7 @@
       rel="stylesheet"
     />
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
     <div class="nav-container">
@@ -90,30 +91,75 @@
       </div>
     </div>
 
-    <section class="stat-section">
-        <div class="container">
-            <div class="coin-info-left">
-                <div class="rank-info">
-                    <img src="./icons/bookmark-fill(1).svg" height="120px" />
-                    <h2>1</h2>
-                    <p>RANK</p>
-                </div>
-                <div class="coin-header">
-                    <div class="coin-title">Bitcoin (BTC)</div>
-                    <div class="coin-price">
-                      <span>$22,589.81</span><span class="price-percent">-7.45%</span>
-                    </div>
-                  </div>
+    <section class="stat-section stat-top">
+      <div class="container general-info">
+        <div class="coin-info-left">
+          <div class="rank-info">
+            <img src="./icons/bookmark-fill(1).svg" height="120px" />
+            <h2>1</h2>
+            <p>RANK</p>
+          </div>
+          <div class="coin-header">
+            <div class="coin-title">Bitcoin (BTC)</div>
+            <div class="coin-price">
+              <span>$22,589.81</span><span class="price-percent">-7.45%</span>
             </div>
-            <div class="coin-info-right">
-                <div class="coin-info-right-col"></div>
-                <div class="coin-info-right-col"></div>
-                <div class="coin-info-right-col"></div>
-            </div>
+          </div>
         </div>
+        <div class="coin-info-right">
+          <div class="coin-info-right-col">
+            <div>
+              Market Cap<br /><span class="right-col-val">$390.58b</span>
+            </div>
+            <button class="button">Website</button>
+          </div>
+          <div class="coin-info-right-col">
+            <div>
+              Volume(24Hr)<br /><span class="right-col-val">$11.06b</span>
+            </div>
+            <button class="button">Explorer</button>
+          </div>
+          <div class="coin-info-right-col">
+            <div>Supply<br /><span class="right-col-val">19.07m BTC</span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <main></main>
+    <main>
+      <div class="container coin-stats">
+        <div class="coin-stats-left">
+          <img src="https://assets.coincap.io/assets/icons/btc@2x.png" />
+          <div class="coin-left-id">
+            <div class="coin-name">Bitcoin (BTC)</div>
+            <div>22 June 2022</div>
+          </div>
+        </div>
+        <div class="coin-stats-right">
+          <div class="coin-stats-right-col">
+            <div>
+              <span class="coin-stats-title">HIGH</span>
+              <span class="coin-stats-value">$31,669.95</span>
+            </div>
+            <div>
+              <span class="coin-stats-title">LOW</span>
+              <span class="coin-stats-value">$29,283.82</span>
+            </div>
+          </div>
+        </div>
+        <div class="coin-stats-right-col">
+          <div>
+            <span class="coin-stats-title">AVERAGE</span>
+            <span class="coin-stats-value">$30,746.25</span> 
+          </div>
+          <div>
+            <span class="coin-stats-title">CHANGE</span>
+            <span class="coin-stats-value">-5.01%</span> 
+          </div>
+        </div>
+      </div>
+      <canvas id="myChart" width="800" height="450" class="container"></canvas>
+    </main>
 
     <footer>
       <div class="footer-container container">
@@ -167,5 +213,6 @@
       </div>
     </footer>
     <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="./chart.js"></script>
   </body>
 </html>

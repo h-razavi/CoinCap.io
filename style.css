@@ -261,6 +261,10 @@ select{
     filter: blur(5px) saturate(30%);
     transition: all .5s ease-in-out;
 }
+.general-info{
+    display: flex;
+    justify-content: space-between;
+}
 .coin-info-left{
     display: flex;
     align-items: flex-start;
@@ -309,7 +313,72 @@ select{
     padding-left: 20px;
     color: rgb(239, 154, 154);
 }
+.stat-top{
+    padding: 21px 0 40px;
+}
+.coin-info-right{
+    display: flex;
+}
+.coin-info-right-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 100px;
+}
+.right-col-val{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.coin-info-right-col button{
+    width: 100%;
+    padding: 0 20px;
+}
+.coin-stats{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+}
+.coin-stats-left{
+    display: flex;
+    align-items: center;
+}
+.coin-stats-left img{
+    padding: 14px;
+}
+.coin-left-id{
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
+}
+.coin-name{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+.coin-stats-right{
+        display: flex;
+        justify-content: space-between;
+        text-align: left;   
+}
+.coin-stats-title{
+    color: grey;
+    padding-right: 16px;
+    font-weight: 700;
+    line-height: 1.2rem;
+}
+.coin-stats-value{
+    font-weight: 700;
+    line-height: 1.2rem;
+}
+.coin-stats-right-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
 
 
 

@@ -226,8 +226,8 @@ getTableData()
 
 //Settings modal
 let settings = document.querySelector(".settings");
+let settingsModal = document.querySelector(".settings-modal");
 settings.addEventListener("click", function () {
-  let settingsModal = document.querySelector(".settings-modal");
   settingsModal.classList.remove("hide");
   settingsModal.classList.add("show");
   let container = document.querySelectorAll(".container");
@@ -238,10 +238,7 @@ settings.addEventListener("click", function () {
   body.style.position = "fixed";
   body.style.width = "100%";
 });
-
-let closeSettings = document.querySelector(".close-button");
-closeSettings.addEventListener("click", function () {
-  let settingsModal = document.querySelector(".settings-modal");
+function closeModal (){
   settingsModal.classList.remove("show");
   settingsModal.classList.add("hide");
   let container = document.querySelectorAll(".container");
@@ -251,4 +248,14 @@ closeSettings.addEventListener("click", function () {
   let body = document.querySelector("body");
   body.style.position = "";
   body.style.width = "";
+}
+
+let closeSettings = document.querySelector(".close-button");
+closeSettings.addEventListener("click", function(){
+  closeModal();
 });
+window.onclick=function(event){
+  if (event.target==settingsModal){
+    closeModal();
+  }
+}

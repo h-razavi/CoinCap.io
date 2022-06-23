@@ -17,6 +17,7 @@
   "homepage": "https://github.com/h-razavi/CoinCap.io#readme",
   "description": "",
   "dependencies": {
+    "chart.js": "^3.8.0",
     "numeral": "^2.0.6"
   }
 }
